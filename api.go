@@ -95,7 +95,7 @@ func CORSMiddleware() gin.HandlerFunc{
 func main() {
 	router:= gin.Default()
 	router.Use(CORSMiddleware())
-	router.GET("/api" infoHandler)
+	router.GET("/api", infoHandler)
 	//http.HandleFunc("/api", infoHandler)
 	port := os.Getenv("PORT")
 	if port == ""{
