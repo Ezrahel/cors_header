@@ -76,7 +76,7 @@ func nigeriaTime() time.Time {
 }
 
 
-func CORSMiddleware() gin.HandlerFunc{
+func CORSMiddleware() gin.HandleFunc{
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
@@ -84,7 +84,7 @@ func CORSMiddleware() gin.HandlerFunc{
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT")
 
 		if c.Request.Method == "OPTIONS" {
-			c.AborttWithStatus(204)
+			c.AbortWithStatus(204)
 			return
 		}
 
